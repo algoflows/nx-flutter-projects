@@ -78,7 +78,8 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "flutter run",
-        "cwd": "apps/clients/movie-app"
+        "cwd": "apps/clients/movie-app",
+        "args": "--flavor dev"
       }
     },
     "build-aar": {
@@ -87,9 +88,7 @@
         "command": "flutter build aar",
         "cwd": "apps/clients/movie-app"
       },
-      "outputs": [
-        "{workspaceRoot}/apps/clients/movie-app/build"
-      ]
+      "outputs": ["{workspaceRoot}/apps/clients/movie-app/build"]
     },
     "build-apk": {
       "executor": "nx:run-commands",
@@ -97,9 +96,7 @@
         "command": "flutter build apk",
         "cwd": "apps/clients/movie-app"
       },
-      "outputs": [
-        "{workspaceRoot}/apps/clients/movie-app/build"
-      ]
+      "outputs": ["{workspaceRoot}/apps/clients/movie-app/build"]
     },
     "build-appbundle": {
       "executor": "nx:run-commands",
@@ -107,9 +104,7 @@
         "command": "flutter build appbundle",
         "cwd": "apps/clients/movie-app"
       },
-      "outputs": [
-        "{workspaceRoot}/apps/clients/movie-app/build"
-      ]
+      "outputs": ["{workspaceRoot}/apps/clients/movie-app/build"]
     },
     "build-bundle": {
       "executor": "nx:run-commands",
@@ -117,9 +112,7 @@
         "command": "flutter build bundle",
         "cwd": "apps/clients/movie-app"
       },
-      "outputs": [
-        "{workspaceRoot}/apps/clients/movie-app/build"
-      ]
+      "outputs": ["{workspaceRoot}/apps/clients/movie-app/build"]
     },
     "build-ios": {
       "executor": "nx:run-commands",
@@ -127,9 +120,7 @@
         "command": "flutter build ios",
         "cwd": "apps/clients/movie-app"
       },
-      "outputs": [
-        "{workspaceRoot}/apps/clients/movie-app/build"
-      ]
+      "outputs": ["{workspaceRoot}/apps/clients/movie-app/build"]
     },
     "build-ios-framework": {
       "executor": "nx:run-commands",
@@ -137,9 +128,7 @@
         "command": "flutter build ios-framework",
         "cwd": "apps/clients/movie-app"
       },
-      "outputs": [
-        "{workspaceRoot}/apps/clients/movie-app/build"
-      ]
+      "outputs": ["{workspaceRoot}/apps/clients/movie-app/build"]
     },
     "build-ipa": {
       "executor": "nx:run-commands",
@@ -147,9 +136,7 @@
         "command": "flutter build ipa",
         "cwd": "apps/clients/movie-app"
       },
-      "outputs": [
-        "{workspaceRoot}/apps/clients/movie-app/build"
-      ]
+      "outputs": ["{workspaceRoot}/apps/clients/movie-app/build"]
     }
   },
   "tags": []
