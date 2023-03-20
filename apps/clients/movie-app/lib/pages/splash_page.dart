@@ -1,7 +1,9 @@
 import 'dart:convert';
 
+import 'package:clients_movie_app/models/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import "package:get_it/get_it.dart";
 
 class SplashPage extends StatefulWidget {
@@ -19,14 +21,23 @@ class _SplashPageState extends State<SplashPage> {
   initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3)).then(
-      (_) => widget.onInitializationComplete(),
+      (_) => _setup(context).then(
+        (_) => widget.onInitializationComplete(),
+      ),
     );
   }
 
-  Future<void> _setup(BuildContext _context) async {
+  Future<void> _setup(BuildContext context) async {
     final getIt = GetIt.instance;
-    final configFile = await rootBundle.loadString('assets/config.json');
+    final configFile = await rootBundle.loadString('assets/config/main.json');
     final config = json.decode(configFile);
+
+    getIt.registerSingleton<AppConfig>(AppConfig(
+      apiImageUrl: config['API_IMAGE_URL'],
+      apiBaseUrl: config['API_BASE_URL'],
+      // get api key from environment
+      apiKey: dotenv.env['API_KEY'] ?? 'API_KEY not found!',
+    ));
   }
 
   @override
